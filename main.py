@@ -9,5 +9,5 @@ mandates = 11
 
 votes = Votes('./votes/' + path + '.csv')
 votes.checkVotes()
-#counting = CountingVotes(votes.votes, votes.candidates, mandates)
-# counting.startCounting()
+counting = CountingVotes(votes.votes, votes.candidates, mandates)
+counting.startCounting()
