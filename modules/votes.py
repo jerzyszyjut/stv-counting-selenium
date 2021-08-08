@@ -21,6 +21,8 @@ class Votes:
         self.readVotes()
         self.getCandidates()
 
+        self.checkVotes()
+
     def __del__(self):
         self.file.close()
 
@@ -40,3 +42,11 @@ class Votes:
             for j in i:
                 if (j not in self.candidates) and not j == '':
                     self.candidates.append(j)
+
+    def checkVotes(self):
+        for i in range(len(self.votes)):
+            seen = []
+            for j in self.votes[i]:
+                if j in seen:
+                    print(f'Vote no. {i} is not valid!')
+                    seen.append(j)
